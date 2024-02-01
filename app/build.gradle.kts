@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +42,8 @@ android {
 dependencies {
     val lifecycleVersion = "2.7.0"
     val koinVersion = "3.6.0-alpha1"
+    val daggerVersion = "2.50"
+    val hiltVersion = "2.44"
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
@@ -58,6 +61,10 @@ dependencies {
     implementation("io.insert-koin:koin-android:$koinVersion")
 
     testImplementation("io.insert-koin:koin-test:$koinVersion")
+
+    implementation("com.google.dagger:dagger:$daggerVersion")
+    kapt("com.google.dagger:dagger-compiler:$daggerVersion")
+    implementation("javax.inject:javax.inject:1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

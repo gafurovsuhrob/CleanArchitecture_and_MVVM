@@ -1,4 +1,4 @@
-package com.seros.testapp.di
+package com.seros.testapp.diKoin
 
 import com.seros.testapp.presentation.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
